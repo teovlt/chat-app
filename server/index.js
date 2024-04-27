@@ -1,9 +1,12 @@
-import Express from 'express'
+import Express, { urlencoded } from 'express'
 import dotenv from 'dotenv'
+import cookieParser from 'cookie-parser'
+
 import authRoutes from './routes/authRoutes.js'
 import messageRoutes from './routes/messageRoutes.js'
+import userRoutes from './routes/userRoutes.js'
+
 import connectToDatabase from './db/connectToDatabase.js'
-import cookieParser from 'cookie-parser'
 
 //Config of dotenv so we can use our variables
 dotenv.config()
@@ -19,6 +22,8 @@ app.use(cookieParser())
 app.use('/api/auth', authRoutes)
 //Messages routes
 app.use('/api/messages', messageRoutes)
+// Users routes
+app.use('/api/users', userRoutes)
 
 app.listen(PORT, () => {
   connectToDatabase()

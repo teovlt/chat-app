@@ -15,13 +15,13 @@ function Conversation({ conversation, emoji, lastIdx }) {
         onClick={isSelected ? () => setSelectedConversation(null) : () => setSelectedConversation(conversation)}
       >
         <div className='avatar online'>
-          <div className='w-12 rounded-full'>
+          <div className='w-12 rounded-full '>
             <img src={conversation.profilePicture} alt='user avatar' />
           </div>
         </div>
         <div className='flex flex-col flex-1'>
           <div className='flex gap-3 justify-between'>
-            <p className='font-bold text-gray-200'>{conversation.fullName}</p>
+            <p className='font-bold text-gray-200'>{conversation.username}</p>
             <span className='text-xl'>{emoji}</span>
           </div>
         </div>

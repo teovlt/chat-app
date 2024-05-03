@@ -7,12 +7,12 @@ import messageRoutes from './routes/messageRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 
 import connectToDatabase from './db/connectToDatabase.js'
+import { app, server } from './socket/socket.js'
 
 //Config of dotenv so we can use our variables
 dotenv.config()
 
 // Server
-const app = Express()
 const PORT = process.env.PORT
 
 app.use(Express.json()) //to parse the incoming requests with JSON payloads
@@ -25,7 +25,7 @@ app.use('/api/messages', messageRoutes)
 // Users routes
 app.use('/api/users', userRoutes)
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToDatabase()
   console.log(`Server is running on port ${PORT} 🚀`)
 })

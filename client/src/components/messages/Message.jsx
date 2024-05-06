@@ -19,7 +19,7 @@ const Message = ({ message }) => {
           <img alt='Tailwind CSS chat bubble component' src={profilePicture} />
         </div>
       </div>
-      <div className={`chat-bubble text-white ${bubbleColor} ${shakeClasse} pb-2`}>{message.message}</div>
+      <div className={`chat-bubble text-white ${bubbleColor} ${shakeClasse} break-words pb-2`}>{message.message}</div>
       <div className='chat-footer opacity-50 text-xs flex gap-1 items-center'>{extractTime(message.createdAt)}</div>
     </div>
   )

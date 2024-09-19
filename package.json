@@ -6,7 +6,7 @@
   "scripts": {
     "server": "nodemon server/index.js",
     "start": "node server/index.js",
-    "build": "npm i && cd client && npm i && npm run build "
+    "build": "npm i && cd client && npm i && npm run build"
   },
   "type": "module",
   "keywords": [],
